@@ -1,3 +1,5 @@
 .venv
 .La Vista 1H
 __pycache__
+*.pkl
+*.db

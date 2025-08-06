@@ -8,6 +8,9 @@ class DataLoader:
     def __init__(self, data_dir):
         self.data_dir = data_dir
         self.df = None  # DataFrame to hold the loaded data
+        if (self.data_dir / "processed_data.pkl").exists():
+            self.df = pd.read_pickle(self.data_dir / "processed_data.pkl")
+            return
         self.__files = {}
 
     def load(self, force_reload=False):
@@ -26,6 +29,9 @@ class DataLoader:
         self.__files['Sales Meter Flow Rate (MCF_Day).csv'] = self.__flow_rate_cycles()
         self.df = pd.DataFrame(self.__files['Sales Meter Flow Rate (MCF_Day).csv'], columns=['cycle_id', 'isotime', 'flow_rate'])
         self.__data_entries_manager()
+
+        output_path = self.data_dir / "processed_data.pkl"
+        self.df.to_pickle(output_path)
         
         return self.df
     
