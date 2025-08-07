@@ -1,5 +1,6 @@
 import sqlite3
 from pathlib import Path
+import json
 
 class Database:
     def __init__(self, db_name=':memory:'):
@@ -54,3 +55,12 @@ class Database:
         sql = f"SELECT * FROM {event_name}"
         self.cursor.execute(sql)
         return self.cursor.fetchall()
+    
+    def run_query(self, query: str):
+        if not query.strip().lower().startswith("select"):
+            raise ValueError("Only SELECT queries are allowed.")
+        self.cursor.execute(query)
+        rows = self.cursor.fetchall()
+        columns = [desc[0] for desc in self.cursor.description]
+        result = [dict(zip(columns, row)) for row in rows]
+        return json.dumps(result)
