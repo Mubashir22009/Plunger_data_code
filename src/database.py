@@ -1,6 +1,5 @@
 import sqlite3
 from pathlib import Path
-import json
 
 class Database:
     def __init__(self, db_name=':memory:'):
@@ -63,4 +62,4 @@ class Database:
         rows = self.cursor.fetchall()
         columns = [desc[0] for desc in self.cursor.description]
         result = [dict(zip(columns, row)) for row in rows]
-        return json.dumps(result)
+        return result

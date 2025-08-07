@@ -6,6 +6,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 import sqlite3
 import time
+import json
 
 def main():
     db_name = "events.db"
@@ -54,8 +55,7 @@ def main():
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
-            self.wfile.write(result.encode())
-            self.wfile.write(result.encode())
+            self.wfile.write(json.dumps(result).encode())
 
     server = HTTPServer(('0.0.0.0', 8765), SimpleSQLHandler)
     print("Listening on port 8765...")
