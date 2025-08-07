@@ -14,19 +14,19 @@ FETCHDATA_DAYS =False
 
 
 def save_to_csv(file_path: str, data: List[Dict[str, Any]]):
-    # ✅ Ensure the folder path exists
+    # Ensure the folder path exists
     folder = os.path.dirname(file_path)
     if folder:
         os.makedirs(folder, exist_ok=True)
 
-    # ✅ Check if file exists
+    # Check if file exists
     file_exists = os.path.exists(file_path)
 
-    # ✅ Open the file in append mode
+    #  Open the file in append mode
     with open(file_path, mode='w', newline='') as csvfile:
         writer = csv.writer(csvfile)
 
-        # ✅ Write header if file is new
+        # Write header if file is new
         if not file_exists:
             writer.writerow(["timestamp", "val"])
 

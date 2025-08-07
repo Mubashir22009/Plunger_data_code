@@ -5,7 +5,9 @@ class Database:
     def __init__(self, db_name=':memory:'):
         self.data_dir = Path(__file__).parent.parent / 'data'
         self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.schema_dir = Path(__file__).parent.parent / 'db_schema'
 
+        
         if db_name == ':memory:':
             print("Using in-memory database.")
             self.connection = sqlite3.connect(db_name)
@@ -20,7 +22,7 @@ class Database:
         self.create_tables()
 
     def create_tables(self):
-        with open(self.data_dir / 'schema.sql', 'r') as f:
+        with open(self.schema_dir / 'schema.sql', 'r') as f:
             schema = f.read()
         self.cursor.executescript(schema)
         self.connection.commit()
