@@ -12,9 +12,10 @@ from datetime import datetime
 from src.fetcher.fetcher import fetcher_Main
 
 def main():
-    db_name = "events.db"
     fetcher_Main()
+    db_name = "events.db"
     db = Database(db_name)
+    print("Latest well ID:", db.latest_well_id())
     data_loader = DataLoader(Path.cwd() / "data")
     events_generator = EventsGenerator(data_loader, db)
     events_generator.generate_events()

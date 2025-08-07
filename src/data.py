@@ -110,7 +110,7 @@ class DataLoader:
             # Iterate through the DataFrame and for each isotime of flow rate (threshold_isotime)
             # find the corresponding isotime in the range of the thereshold_isotime_range
             # and assign the value from the corresponding file to the DataFrame      
-            for i in range(0,7198):
+            for i in range(len(self.df)):
                 threshold_isotime = self.df.iloc[i]["isotime"]
                 threshold_isotime_range = [threshold_isotime-60, threshold_isotime+61] # last is not included soo +61 to get +60
                 for j in range(len(self.__files[file_name])):
