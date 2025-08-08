@@ -16,11 +16,12 @@ class DataLoader:
     def load(self, force_reload=False):
         if self.df is not None and not force_reload:
             return self.df  # Return the existing DataFrame if it has already been loaded
-
+        
         # Initialize the files dictionary to store parsed CSV data
         self.__files = {}
         _data_dir = Path(self.data_dir / "La Vista 1H") 
         for file_name in os.listdir(_data_dir):
+            print(file_name)
             content = self.__parse_csv(
                 _data_dir / file_name
             )

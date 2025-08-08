@@ -3,6 +3,7 @@ class EventsGenerator:
     def __init__(self, data_loader, database):
         self.data_loader = data_loader
         self.df = data_loader.load()
+        print("ret from load")
         self.database = database
 
         # Ensure the database is ready
