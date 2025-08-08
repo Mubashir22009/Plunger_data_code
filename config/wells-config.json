@@ -1,0 +1,243 @@
+{
+   "username": "",
+   "password": "",
+   "lastFetchTime": "2025-08-07T13:03:02.924873-05:00",
+   "step_seconds": 1,
+   "wells": [
+      {
+         "name": "La Vista 1H",
+         "id": 1,
+         "arrival_time_remaining_threshold": 30,
+         "pids": [
+            {
+               "name": "Tubing Pressure (PSI)",
+               "pid": 147279,
+               "op_name": ""
+            },
+            {
+               "name": "Casing Pressure (PSI)",
+               "pid": 147280,
+               "op_name": ""
+            },
+            {
+               "name": "Down Hole Pressure (PSI)",
+               "pid": 147662,
+               "op_name": ""
+            },
+            {
+               "name": "Sales Meter Flow Rate (MCF_Day)",
+               "pid": 147310,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Speed",
+               "pid": 393576,
+               "op_name": ""
+            },
+            {
+               "name": "Line Pressure (PSIA)",
+               "pid": 147308,
+               "op_name": ""
+            },
+            {
+               "name": "Current Non-Arrival Count",
+               "pid": 393548,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Time Remaining",
+               "pid": 393544,
+               "op_name": ""
+            }
+         ]
+      },
+      {
+         "name": "Hunt 3H",
+         "id": 2,
+         "arrival_time_remaining_threshold": 180,
+         "pids": [
+            {
+               "name": "Tubing Pressure (PSI)",
+               "pid": 525821,
+               "op_name": ""
+            },
+            {
+               "name": "Casing Pressure (PSI)",
+               "pid": 525822,
+               "op_name": ""
+            },
+            {
+               "name": "Down Hole Pressure (PSI)",
+               "pid": 525813,
+               "op_name": ""
+            },
+            {
+               "name": "Sales Meter Flow Rate (MCF_Day)",
+               "pid": 525827,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Speed",
+               "pid": 774850,
+               "op_name": ""
+            },
+            {
+               "name": "Line Pressure (PSIA)",
+               "pid": 525824,
+               "op_name": ""
+            },
+            {
+               "name": "Current Non-Arrival Count",
+               "pid": 774823,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Time Remaining",
+               "pid": 774819,
+               "op_name": ""
+            }
+         ]
+      },
+      {
+         "name": "Broken Bow Lake 5H",
+         "id": 3,
+         "arrival_time_remaining_threshold": 120,
+         "pids": [
+            {
+               "name": "Tubing Pressure (PSI)",
+               "pid": 620631,
+               "op_name": ""
+            },
+            {
+               "name": "Casing Pressure (PSI)",
+               "pid": 620632,
+               "op_name": ""
+            },
+            {
+               "name": "Down Hole Pressure (PSI)",
+               "pid": 620623,
+               "op_name": ""
+            },
+            {
+               "name": "Sales Meter Flow Rate (MCF_Day)",
+               "pid": 795397,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Speed",
+               "pid": 795376,
+               "op_name": ""
+            },
+            {
+               "name": "Line Pressure (PSIA)",
+               "pid": 795394,
+               "op_name": ""
+            },
+            {
+               "name": "Current Non-Arrival Count",
+               "pid": 795349,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Time Remaining",
+               "pid": 795345,
+               "op_name": ""
+            }
+         ]
+      },
+      {
+         "name": "John Phillips 1H",
+         "id": 4,
+         "arrival_time_remaining_threshold": 90,
+         "pids": [
+            {
+               "name": "Tubing Pressure (PSI)",
+               "pid": 367459,
+               "op_name": ""
+            },
+            {
+               "name": "Casing Pressure (PSI)",
+               "pid": 367460,
+               "op_name": ""
+            },
+            {
+               "name": "Down Hole Pressure (PSI)",
+               "pid": 367493,
+               "op_name": ""
+            },
+            {
+               "name": "Sales Meter Flow Rate (MCF_Day)",
+               "pid": 367462,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Speed",
+               "pid": 571565,
+               "op_name": ""
+            },
+            {
+               "name": "Line Pressure (PSIA)",
+               "pid": 367463,
+               "op_name": ""
+            },
+            {
+               "name": "Current Non-Arrival Count",
+               "pid": 571538,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Time Remaining",
+               "pid": 571534,
+               "op_name": ""
+            }
+         ]
+      },
+      {
+         "name": "Great Plains 1H",
+         "id": 5,
+         "arrival_time_remaining_threshold": 150,
+         "pids": [
+            {
+               "name": "Tubing Pressure (PSI)",
+               "pid": 401569,
+               "op_name": ""
+            },
+            {
+               "name": "Casing Pressure (PSI)",
+               "pid": 401505,
+               "op_name": ""
+            },
+            {
+               "name": "Down Hole Pressure (PSI)",
+               "pid": 401538,
+               "op_name": ""
+            },
+            {
+               "name": "Sales Meter Flow Rate (MCF_Day)",
+               "pid": 401507,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Speed",
+               "pid": 525223,
+               "op_name": ""
+            },
+            {
+               "name": "Line Pressure (PSIA)",
+               "pid": 401508,
+               "op_name": ""
+            },
+            {
+               "name": "Current Non-Arrival Count",
+               "pid": 525196,
+               "op_name": ""
+            },
+            {
+               "name": "Arrival Time Remaining",
+               "pid": 525192,
+               "op_name": ""
+            }
+         ]
+      }
+   ]
+}

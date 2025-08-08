@@ -7,8 +7,12 @@ import threading
 import sqlite3
 import time
 import json
+from src.metadata import cdt
+from datetime import datetime
+from src.fetcher.fetcher import fetcher_Main
 
 def main():
+    fetcher_Main()
     db_name = "events.db"
     db = Database(db_name)
     data_loader = DataLoader(Path.cwd() / "data")
