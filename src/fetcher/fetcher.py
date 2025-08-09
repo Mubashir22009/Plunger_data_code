@@ -9,7 +9,7 @@ from .onping_fetcher import fetch_data_range
 import json
 
 from ..metadata import cdt,WELLS_CONFIG_FILE,DATA_FOLDER
-days_to_subtract=1    # used if no config avaliable  or  FETCHDATA_DAYS = True
+days_to_subtract=1  # used if no config avaliable  or  FETCHDATA_DAYS = True
 FETCHDATA_DAYS =False
 
 

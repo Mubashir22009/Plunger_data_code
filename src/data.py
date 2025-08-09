@@ -14,8 +14,8 @@ class DataLoader:
         self.__files = {}
 
     def load(self, force_reload=False):
-        if self.df is not None and not force_reload:
-            return self.df  # Return the existing DataFrame if it has already been loaded
+        # if self.df is not None and not force_reload:
+        #     return self.df  # Return the existing DataFrame if it has already been loaded
         
         # Initialize the files dictionary to store parsed CSV data
         self.__files = {}

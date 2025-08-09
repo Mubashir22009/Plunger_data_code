@@ -75,7 +75,7 @@ def main():
         server.shutdown()
         server.server_close()
         # clean up db temporarily, just for testing
-        (Path.cwd() / 'data' / 'events.db').unlink(missing_ok=True)
+        # (Path.cwd() / 'data' / 'events.db').unlink(missing_ok=True)
 
 if __name__ == "__main__":
     main()
