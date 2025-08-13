@@ -65,3 +65,12 @@ class Database:
         columns = [desc[0] for desc in self.cursor.description]
         result = [dict(zip(columns, row)) for row in rows]
         return result
+
+    def get_last_cycle_id(self) -> int:
+        try:
+            self.cursor.execute("SELECT MAX(cycle_id) FROM EVENTS")
+            row = self.cursor.fetchone()
+            return row[0] if row and row[0] is not None else -1
+        except sqlite3.Error:
+            # If table doesn't exist yet or other error, start fresh
+            return -1

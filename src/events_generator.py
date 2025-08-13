@@ -1,9 +1,7 @@
-
 class EventsGenerator:
     def __init__(self, data_loader, database):
         self.data_loader = data_loader
         self.df = data_loader.load()
-        print("ret from load")
         self.database = database
 
         # Ensure the database is ready
@@ -32,12 +30,20 @@ class EventsGenerator:
 
 
     def __generate_events_per_cycle(self, basic_event_funcs, complex_event_funcs):
-        for cycle_id, group in self.df.groupby('cycle_id'):
+        # Determine starting cycle_id based on existing DB records
+        base_cycle_id = 0
+        if hasattr(self.database, 'get_last_cycle_id'):
+            last = self.database.get_last_cycle_id()
+            base_cycle_id = (last + 1) if last is not None and last >= 0 else 0
+
+        for new_idx, (cycle_id, group) in enumerate(self.df.groupby('cycle_id', sort=True)):
             cycle_events = {}
+            # Generate basic events
             for event_func in basic_event_funcs:
                 if callable(event_func):
                     id, name = event_func(group)
                     cycle_events[name] = id
+            # Generate complex events (may depend on basic ones)
             for event_func in complex_event_funcs:
                 if callable(event_func):
                     id, name = event_func(group, cycle_events)
@@ -47,7 +53,8 @@ class EventsGenerator:
             filtered_events = {k: v for k, v in cycle_events.items() if v is not None}
             parent_event = {
                 "name": "EVENTS",
-                "cycle_id": int(cycle_id),
+                # Continuously increasing cycle_id across runs
+                "cycle_id": int(base_cycle_id + new_idx),
                 **filtered_events
             }
             self.database.insertEvent(parent_event)
